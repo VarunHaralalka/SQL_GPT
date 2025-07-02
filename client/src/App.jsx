@@ -18,9 +18,9 @@ function App() {
       },
       body: JSON.stringify({ query: query }),
     });
-
     const data = await result.json();
-    return data.response.trim();
+    console.log(data);
+    return data.response.sql;
   };
   return (
     <main className={styles.body}>

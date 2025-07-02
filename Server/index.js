@@ -1,6 +1,7 @@
 import express from "express";
 import cors from "cors";
 import generate from "./generate.js";
+import { extractJsonFromCodeBlock } from "./parseResponse.js";
 
 const app = express();
 app.use(express.json());
@@ -15,8 +16,8 @@ app.post("/generate", async (req, res) => {
   const query = req.body.query;
   try {
     const result = await generate(query);
-    console.log(result);
-    res.json({ response: result });
+    const json = extractJsonFromCodeBlock(result);
+    res.json({ response: json });
   } catch (error) {
     console.error(error);
     res.status(500).send("Internal Server Error");
