@@ -30,13 +30,16 @@ function App() {
     console.log(errors);
   };
   const generateQuery = async (query) => {
-    const result = await fetch("http://localhost:5500/generate", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ query: query }),
-    });
+    const result = await fetch(
+      "https://sql-gpt-backend.onrender.com/generate",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ query: query }),
+      }
+    );
     if (!result.ok) throw new Error("Server error");
     const data = await result.json();
     console.log(data);
