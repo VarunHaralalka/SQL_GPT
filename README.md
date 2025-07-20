@@ -38,7 +38,7 @@ npm start
 
 ### Using your credentials
 
-You can use your own credentials by get the api in to the [GEMINI API DOCS](https://ai.google.dev/gemini-api/docs) setting the OPENAI_API_KEY` environment variables before running the server. For example, you could supply your own credentials by running the server like so:
+You can use your own credentials by get the api in to the [GEMINI API DOCS](https://ai.google.dev/gemini-api/docs) setting the GEMINI_API_KEY` environment variables before running the server. For example, you could supply your own credentials by running the server like so:
 
 ```
 GEMINI_API_KEY=my_api_key

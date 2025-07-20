@@ -1,5 +1,4 @@
 export function extractJsonFromCodeBlock(text) {
-  // First try to extract JSON from code blocks
   const codeBlockMatch = text.match(/```json\s*([\s\S]*?)\s*```/);
   if (codeBlockMatch) {
     try {
@@ -9,7 +8,6 @@ export function extractJsonFromCodeBlock(text) {
     }
   }
 
-  // If no code block, try to parse the entire text as JSON
   try {
     return JSON.parse(text.trim());
   } catch (err) {
